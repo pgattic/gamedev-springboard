@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Game Engines</title>
+	</head>
+	<body>
+		<h1>Game Engines</h1>
+		<p>This page dynamically renders its content based on the information contained in a .json file!</p>
+		<div id="display"></div>
+		<script>
+
+var $=x=>{return document.querySelector(x)};
+
+var engines;
+
+function display(content) {
+	for (var i = 0; i < content.length; i++) {
+		var entry = document.createElement("div");
+
+		/* create Title element for each entry */
+		var link = document.createElement("a");
+		link.innerText = content[i].name;
+		link.href=content[i].homeWebsite;
+		link.target="_blank";
+		var title = document.createElement("h2");
+		title.append(link);
+
+		/* Create Subtitle element for each entry */
+		var subtitle = document.createElement("small");
+		subtitle.innerText = content[i].subtitle;
+
+		entry.append(title, subtitle);
+		$("#display").append(entry);
+	}
+}
+
+async function retrieve(url) {
+	const requestURL = url;
+	const request = new Request(requestURL);
+	const response = await fetch(request);
+	engines = await response.json();
+}
+
+retrieve("data/engines.json").then(()=>{display(engines)});
+
+		</script>
+	</body>
+</html>
