@@ -5,11 +5,18 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<title>Game Engines</title>
+		<link rel="stylesheet" href="css/main.css">
 	</head>
 	<body>
-		<h1>Game Engines</h1>
-		<p>This page dynamically renders its content based on the information contained in a .json file!</p>
-		<div id="display"></div>
+		<div id="content">
+			<h1>Game Engines</h1>
+			<h2>Information:</h2>
+			<p>For me, entering the Game Development world was very difficult when I was younger, as I didn't know where to start, or which path to take. I think a large part of that was simply not knowing enough about how to begin. For this reason, I began documenting the different methods to create video games for different systems. One such example was a <a href="https://docs.google.com/spreadsheets/d/1p6EM3h34s7B2LSoq1twFvjw-8X--FBGwBYeg4m9_5WM/edit?usp=sharing" target="_blank">spreadsheet</a> containing information about which tools to use to compile or run different programming languages on different gaming systems and consoles I used growing up.</p>
+			<p>Although such information was useful, I knew this wasn't all there was, and I also knew that these means to demonstrate the information were limited. This, I set out to create a tool that improves upon this current information, makes it more accessible, and makes it easy to get started. The obvious answer was to create a web site. This has brought me to where I am today.</p>
+
+			<p>This page dynamically renders its content based on the information contained in <a href="data/engines.json">a .json file</a>!</p>
+			<div id="display"></div>
+		</div>
 		<script>
 
 var $=x=>{return document.querySelector(x)};
@@ -20,19 +27,43 @@ function display(content) {
 	for (var i = 0; i < content.length; i++) {
 		var entry = document.createElement("div");
 
+		/* create img element for each entry */
+		var icon = document.createElement("img");
+		icon.src = content[i].icon[0];
+		icon.style = "background-color: "+content[i].icon[1]
+		icon.classList.add("icon");
+		
 		/* create Title element for each entry */
 		var link = document.createElement("a");
 		link.innerText = content[i].name;
-		link.href=content[i].homeWebsite;
-		link.target="_blank";
+		link.href = content[i].homeWebsite;
+		link.target = "_blank";
 		var title = document.createElement("h2");
 		title.append(link);
 
-		/* Create Subtitle element for each entry */
-		var subtitle = document.createElement("small");
-		subtitle.innerText = content[i].subtitle;
+		var engineType = document.createElement("p");
+		engineType.innerText = content[i].type;
 
-		entry.append(title, subtitle);
+		/* Create Subtitle element for each entry */
+		var subtitle = document.createElement("span");
+		subtitle.innerText = content[i].subtitle;
+		title.append(subtitle, engineType);
+
+		var engineLanguage = document.createElement("p");
+		engineLanguage.innerText = "Languages: " + content[i].languages.join(", ");
+
+		var sourceOS = document.createElement("p");
+		sourceOS.innerText = "Source OS: " + content[i].sourcePlatforms.join(", ");
+
+		var targetOS = document.createElement("p");
+		targetOS.innerText = "Target Platforms: " + content[i].targetPlatforms.join(", ");
+
+		var info = document.createElement("div");
+		info.classList.add("info")
+		info.append(engineLanguage, sourceOS, targetOS)
+
+		entry.append(icon, title, info);
+		entry.classList.add("entry");
 		$("#display").append(entry);
 	}
 }

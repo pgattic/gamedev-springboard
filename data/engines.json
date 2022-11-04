@@ -12,13 +12,14 @@
 		"installWebsite": "https://www.blender.org/download",
 		"tutorialWebsite": "https://docs.blender.org/manual/en/2.79/game_engine",
 		"docsWebsite": "https://docs.blender.org",
+		"icon": ["https://raw.githubusercontent.com/blender/blender/594f47ecd2d5367ca936cf6fc6ec8168c2b360d0/release/freedesktop/icons/scalable/apps/blender.svg", ""],
 		"hasPremium": false,
 		"note": ""
 	},
 	{
 		"url": "buildbox",
 		"name": "Buildbox",
-		"subtitle": "Video Game Development Made Simple - Create 3D & 2D video games without coding. Free. Easy To Use.",
+		"subtitle": "Create 3D & 2D video games without coding. Free. Easy To Use.",
 		"type": "3D-Emphasized",
 		"languages": ["Visual Scripting"],
 		"potentialLanguages": [],
@@ -28,6 +29,7 @@
 		"installWebsite": "https://signup.buildbox.com/downloads/bb3",
 		"tutorialWebsite": "https://www.buildbox.com/tutorials-buildbox-3",
 		"docsWebsite": "https://www.buildbox.com/help/buildbox-3-manual",
+		"icon": ["https://frontend-assets.buildbox.com/BB3+logo.svg", "#222"],
 		"hasPremium": true,
 		"note": "Subscription Required for additional worlds, scenes, and export options, from $53.99 up to $134.99 per year"
 	},
@@ -44,6 +46,7 @@
 		"installWebsite": "",
 		"tutorialWebsite": "",
 		"docsWebsite": "",
+		"icon": ["https://construct-static.com/images/v1034/r/global/construct-3-logo_v43.png", ""],
 		"hasPremium": true,
 		"note": "Construct advertises ease with packaging web exports for mobile and desktop using wrappers like Cordova. Also, it is a paid service with a trial version"
 	},
@@ -60,6 +63,7 @@
 		"installWebsite": "",
 		"tutorialWebsite": "",
 		"docsWebsite": "",
+		"icon": ["https://coal.gamemaker.io/sites/5d75794b3c84c70006700381/theme/images/svg/logomark.svg", "#222"],
 		"hasPremium": true,
 		"note": "Subscription Required for exporting outside of GX.games, from $4.99 up to $79.99 per month"
 	},
@@ -76,6 +80,7 @@
 		"installWebsite": "https://godotengine.org/download",
 		"tutorialWebsite": "https://docs.godotengine.org",
 		"docsWebsite": "https://docs.godotengine.org",
+		"icon": ["https://godotengine.org/themes/godotengine/assets/favicon.svg", "#555"],
 		"hasPremium": false,
 		"note": ""
 	},
@@ -92,6 +97,7 @@
 		"installWebsite": "https://unity.com/download",
 		"tutorialWebsite": "https://learn.unity.com",
 		"docsWebsite": "",
+		"icon": ["img/engine-icons/unity.svg", "#ddd"],
 		"hasPremium": true,
 		"note": ""
 	},
@@ -108,6 +114,7 @@
 		"installWebsite": "https://www.unrealengine.com/en-US/download",
 		"tutorialWebsite": "https://www.unrealengine.com/en-US/learn",
 		"docsWebsite": "https://docs.unrealengine.com/",
+		"icon": ["", ""],
 		"hasPremium": false,
 		"note": ""
 	},
@@ -124,6 +131,7 @@
 		"installWebsite": "",
 		"tutorialWebsite": "",
 		"docsWebsite": "",
+		"icon": ["", ""],
 		"hasPremium": false,
 		"note": ""
 	}
