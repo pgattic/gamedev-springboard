@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Browser</title>
+	</head>
+	<body>
+		<h1>Let's Get Started!</h1>
+
+
+		<form action="engines.html">
+			<h2>I am looking for a: </h2>
+			<input type="radio" id="html" name="fav_language" value="engine">
+			<label for="html">Game Engine</label><br>
+
+			<input type="radio" id="css" name="fav_language" value="glib">
+			<label for="css">Graphics Library</label><br>
+
+			<input type="radio" id="javascript" name="fav_language" value="compiler">
+			<label for="javascript">Code Compiler/Interpreter</label>
+
+
+			<!-- <label for="lang">Programming Language:</label><br>
+			<select id="lang" name="lang" multiple></select><br> -->
+
+			<div id="langs"><h2>Languages:</h2></div>
+
+			<div id="targets"><h2>Target Platform:</h2></div>
+			<!-- <label for="type">Engine Type:</label><br>
+			<select id="type" name="type"></select><br> -->
+
+			<!-- <label for="target">Target Platform:</label><br>
+			<select id="target" name="target"></select><br> -->
+
+			<input type="submit" value="Submit">
+		</form>
+		<script>
+
+const $=(x)=>{return document.querySelector(x)}
+
+function populateForm(data, target) {
+	for (var i = 0; i < data.length; i++) {
+		var newElem = document.createElement("option");
+		newElem.innerText = data[i];
+		newElem.value = i
+		target.append(newElem);
+	}
+}
+
+function populateCheckbox(data, type, target, label = "element", start = 0) {
+	for (var i = start; i < data.length; i++) {
+		var newElem = document.createElement("input");
+		newElem.type = type;
+		newElem.value = i;
+		newElem.name = label;
+		newElem.id = label + i;
+		target.append(newElem);
+		var newLabel = document.createElement("label");
+		newLabel.setAttribute("for", newElem.id);
+		console.log(newLabel.for);
+		newLabel.innerText = data[i];
+		target.append(newLabel);
+		target.append(document.createElement("br"))
+	}
+}
+
+function display(content) {
+//	populateForm(content.languages, $("#lang"));
+	populateCheckbox(content.languages, "checkbox", $("#langs"), "lang", 1);
+	populateCheckbox(content.platforms, "checkbox", $("#targets"), "target", 1);
+	// populateForm(content.dimensions, $("#type"));
+//	populateForm(content.platforms, $("#target"));
+}
+
+async function retrieve(url) {
+	const response = await fetch(url);
+	return await response.json()
+}
+
+retrieve("data/categories.json").then((libs)=>{display(libs)});
+
+
+
+		</script>
+	</body>
+</html>

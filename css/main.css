@@ -16,10 +16,12 @@ body {
 
 .icon {
 	float:left;
+	height: 64px;
 	width: 64px;
-	padding: 12px;
+	object-fit: contain;
+	padding: 8px;
 	background-color: #555;
-	border-radius: 16px;
+	border-radius: 12px;
 }
 
 .entry {
@@ -29,19 +31,19 @@ body {
 	margin: 12px;
 	padding: 12px;
 	display: grid;
-	grid-template-columns: 100px auto;
+	grid-template-columns:min-content auto;
 }
 
 .entry p {
 	margin:0;
 }
 
-.entry h2 {
+.entry h3 {
 	margin: 0;
-	padding: 12px 0;
+	padding: 8px 0 8px 12px;
 }
 
-.entry h2 span {
+.entry h3 span {
 	font-weight:normal;
 	font-size: 16px;
 	margin-left: 8px;
@@ -49,13 +51,13 @@ body {
 	color: #777
 }
 
-.entry h2 a {
+.entry h3 a {
 	text-decoration: none;
 	color: #35b;
 }
 
 .entry .info {
-	margin: 8px 0;
+	margin: 8px 0 0;
 	grid-column: 1;
 	grid-area: 2 / 1 / span 1 / span 2;
 }

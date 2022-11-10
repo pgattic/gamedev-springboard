@@ -9,21 +9,24 @@
 	</head>
 	<body>
 		<div id="content">
-			<h1>Game Engines</h1>
+			<h1>Results</h1>
 			<h2>Information:</h2>
 			<p>For me, entering the Game Development world was very difficult when I was younger, as I didn't know where to start, or which path to take. I think a large part of that was simply not knowing enough about how to begin. For this reason, I began documenting the different methods to create video games for different systems. One such example was a <a href="https://docs.google.com/spreadsheets/d/1p6EM3h34s7B2LSoq1twFvjw-8X--FBGwBYeg4m9_5WM/edit?usp=sharing" target="_blank">spreadsheet</a> containing information about which tools to use to compile or run different programming languages on different gaming systems and consoles I used growing up.</p>
 			<p>Although such information was useful, I knew this wasn't all there was, and I also knew that these means to demonstrate the information were limited. This, I set out to create a tool that improves upon this current information, makes it more accessible, and makes it easy to get started. The obvious answer was to create a web site. This has brought me to where I am today.</p>
 
 			<p>This page dynamically renders its content based on the information contained in <a href="data/engines.json">a .json file</a>!</p>
-			<div id="display"></div>
+			<p><span id="chosen"></span></p>
+			<h2>Game Engines: </h2>
+			<div id="engine-display"></div>
+			<h2>Graphics Libraries: </h2>
+			<div id="lib-display"></div>
 		</div>
 		<script>
 
 var $=x=>{return document.querySelector(x)};
 
-var engines;
 
-function display(content) {
+function display(content, target) {
 	for (var i = 0; i < content.length; i++) {
 		var entry = document.createElement("div");
 
@@ -38,7 +41,7 @@ function display(content) {
 		link.innerText = content[i].name;
 		link.href = content[i].homeWebsite;
 		link.target = "_blank";
-		var title = document.createElement("h2");
+		var title = document.createElement("h3");
 		title.append(link);
 
 		var engineType = document.createElement("p");
@@ -52,30 +55,74 @@ function display(content) {
 		var engineLanguage = document.createElement("p");
 		engineLanguage.innerText = "Languages: " + content[i].languages.join(", ");
 
-		var sourceOS = document.createElement("p");
-		sourceOS.innerText = "Source OS: " + content[i].sourcePlatforms.join(", ");
+		// var sourceOS = document.createElement("p");
+		// sourceOS.innerText = "Source OS: " + content[i].sourcePlatforms.join(", ");
 
 		var targetOS = document.createElement("p");
 		targetOS.innerText = "Target Platforms: " + content[i].targetPlatforms.join(", ");
 
 		var info = document.createElement("div");
 		info.classList.add("info")
-		info.append(engineLanguage, sourceOS, targetOS)
+		info.append(engineLanguage, targetOS)
 
 		entry.append(icon, title, info);
 		entry.classList.add("entry");
-		$("#display").append(entry);
+		target.append(entry);
 	}
 }
 
 async function retrieve(url) {
-	const requestURL = url;
-	const request = new Request(requestURL);
-	const response = await fetch(request);
-	engines = await response.json();
+	const response = await fetch(url);
+	return await response.json()
 }
 
-retrieve("data/engines.json").then(()=>{display(engines)});
+function filter(data, key, value, isArray = false) {
+	if (value == "") { // no value specified by user, no filtering to be done
+		return data;
+	}
+	for (var i = 0; i < data.length; i++) {
+		var dataArray = data[i][key];
+		if (
+			(isArray && !(value.some(e=>dataArray.includes(e)))) || 
+			(!isArray && data[i][key] != value)) {
+			data.splice(i, 1);
+			i--;
+		}
+	}
+	return data;
+}
+
+retrieve("data/engines.json").then((data)=>{
+	retrieve("data/categories.json").then((filters)=>{
+		console.log(data)
+		var url = new URL(window.location);
+		var targetLang = (url.searchParams.getAll("lang") || [0]).map((i)=>{return filters.languages[i]}); // Get target languages as array of strings
+		var targetType = filters.dimensions[url.searchParams.get("type") || 0]; // Get target language as a string
+		var targetSys = filters.platforms[url.searchParams.get("target") || 0]; // Get target language as a string
+		chosen.innerText = "Chosen Language: " + targetLang + " Chosen Target Platform: " + targetSys;
+		data = filter(data, "languages", targetLang, true);
+//		data = filter(data, "type", targetType, false);
+//		data = filter(data, "targetPlatforms", targetSys, true);
+		display(data, $("#engine-display"))
+	})
+});
+
+
+retrieve("data/gfx-libs.json").then((data)=>{
+	retrieve("data/categories.json").then((filters)=>{
+		console.log(data)
+		var url = new URL(window.location);
+		var targetLang = (url.searchParams.getAll("lang") || [0]).map((i)=>{return filters.languages[i]}); // Get target languages as array of strings
+		var targetType = filters.dimensions[url.searchParams.get("type") || 0]; // Get target language as a string
+		var targetSys = filters.platforms[url.searchParams.get("target") || 0]; // Get target language as a string
+		data = filter(data, "languages", targetLang, true);
+//		data = filter(data, "type", targetType, false);
+//		data = filter(data, "targetPlatforms", targetSys, true);
+		display(data, $("#lib-display"))
+	})
+});
+
+
 
 		</script>
 	</body>

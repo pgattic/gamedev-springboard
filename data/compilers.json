@@ -1,0 +1,38 @@
+[
+	{
+		"url": "gcc",
+		"name": "GNU Compiler Collection",
+		"languages": ["Ada", "C", "C++", "D", "Go"],
+		"targetPlatforms": ["Linux", "macOS", "Windows"],
+		"website": "https://gcc.gnu.org/",
+		"docs": "https://gcc.gnu.org/onlinedocs/",
+		"icon": "https://gcc.gnu.org/img/gccegg-65.png"
+	},
+	{
+		"url": "devkitpro",
+		"name": "devkitPro",
+		"languages": ["C", "C++"],
+		"targetPlatforms": ["Game Boy Advance", "Game Boy Color", "GameCube", "GP32", "Nintendo 3DS", "Nintendo DS", "Nintendo Switch", "PlayStation Portable", "Wii", "Wii U"],
+		"website": "https://devkitpro.org/",
+		"docs": "https://devkitpro.org/wiki/",
+		"icon": "https://static.wiidatabase.de/devkitPro.png"
+	},
+	{
+		"url": "pyinstaller",
+		"name": "PyInstaller",
+		"languages": "Python",
+		"targetPlatforms": ["BSD", "Linux", "macOS", "Windows"],
+		"website": "https://pyinstaller.org/en/stable/",
+		"docs": "https://pyinstaller.org/en/stable/",
+		"icon": "https://pyinstaller.org/en/stable/_static/pyinstaller-draft1a-100_trans.png"
+	},
+	{
+		"url": "wasm",
+		"name": "WebAssembly",
+		"languages": ["C", "C#", "C++", "D", "F#", "Go", "Kotlin", "Pascal", "Zig"],
+		"targetPlatforms": ["Web"],
+		"website": "https://webassembly.org/",
+		"docs": "https://webassembly.org/getting-started/developers-guide/",
+		"icon": "https://upload.wikimedia.org/wikipedia/commons/1/1f/WebAssembly_Logo.svg"
+	}
+]

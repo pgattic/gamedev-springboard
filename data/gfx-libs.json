@@ -1,0 +1,112 @@
+[
+	{
+		"url": "directpython",
+		"name": "DirectPython 11",
+		"subtitle": "Use DirectX with Python",
+		"icon": ["https://directpython11.sourceforge.net/images/bg.png"],
+		"type": "3D Only",
+		"languages": ["Python"],
+		"targetPlatforms": ["Windows"],
+		"homeWebsite": "https://directpython11.sourceforge.net/",
+		"docs": "https://directpython11.sourceforge.net/docs/"
+	},
+	{
+		"url": "kivy",
+		"name": "Kivy",
+		"subtitle": "The Open Source Python App development Framework.",
+		"icon": ["https://kivy.org/static/images/logo_kivy_white.png", "#222"],
+		"type": "2D Only",
+		"languages": ["Python"],
+		"targetPlatforms": ["Android", "iOS", "Linux", "macOS", "Windows"],
+		"homeWebsite": "https://kivy.org/",
+		"docs": "https://kivy.org/doc/stable/"
+	},
+	{
+		"url": "love",
+		"name": "LÖVE",
+		"subtitle": "Free 2D Game Engine",
+		"icon": ["https://raw.githubusercontent.com/love2d/love/457480548648ea894905c5f70a5d4cedfa64f105/platform/unix/love.svg", "#b1e3fa"],
+		"type": "2D Only",
+		"languages": ["Lua"],
+		"targetPlatforms": ["Android", "iOS", "Linux", "macOS", "Windows"],
+		"homeWebsite": "https://love2d.org/",
+		"docs": "https://love2d.org/wiki/"
+	},
+	{
+		"url": "opengl",
+		"name": "OpenGL",
+		"subtitle": "The Industry's Foundation for High Performance Graphics",
+		"icon": ["https://www.opengl.org/img/opengl_logo.jpg", "#fff"],
+		"type": "2D and 3D",
+		"languages": ["Ada", "BASIC", "C#", "C++", "Fortran", "Haskell", "Java", "Lisp", "Lua", "Pascal", "Perl", "Python", "Racket", "Ruby"],
+		"targetPlatforms": [],
+		"homeWebsite": "https://www.opengl.org/",
+		"docs": "https://www.khronos.org/opengl/wiki/"
+	},
+	{
+		"url": "panda3d",
+		"name": "Panda3D",
+		"subtitle": "The open source framework for 3d rendering and games",
+		"icon": ["https://www.panda3d.org/wp-content/uploads/2018/12/panda3d_icon-1.png"],
+		"type": "3D Only",
+		"languages": ["Python"],
+		"targetPlatforms": [],
+		"homeWebsite": "https://www.panda3d.org/",
+		"docs": "https://docs.panda3d.org/"
+	},
+	{
+		"url": "pixijs",
+		"name": "PixiJS",
+		"subtitle": "The HTML5 Creation Engine",
+		"icon": ["https://raw.githubusercontent.com/pixijs/pixijs/ac965dd593f766a19ba9592e538a47f936f51739/packages/assets/test/assets/svg/logo.svg", "#fff"],
+		"type": "2D Only",
+		"languages": ["JavaScript"],
+		"targetPlatforms": ["Web"],
+		"homeWebsite": "https://pixijs.com/",
+		"docs": "https://pixijs.download/release/docs/index.html"
+	},
+	{
+		"url": "pygame",
+		"name": "Pygame",
+		"subtitle": "Free and Open Source python programming language library for making multimedia applications",
+		"icon": ["https://www.pygame.org/docs/_static/pygame_logo.svg", "#fff"],
+		"type": "2D Only",
+		"languages": ["Python"],
+		"targetPlatforms": ["Linux", "macOS", "Windows"],
+		"homeWebsite": "https://www.pygame.org/",
+		"docs": "https://www.pygame.org/docs/"
+	},
+	{
+		"url": "raylib",
+		"name": "Raylib",
+		"subtitle": "A simple and easy-to-use library to enjoy videogames programming.",
+		"icon": ["https://www.raylib.com/common/img/raylib_logo.png", "#fff"],
+		"type": "2D-Emphasized",
+		"languages": ["C", "C#", "C++", "D", "Elixir", "Go", "Java", "JavaScript", "Lua", "Nim", "Odin", "Python", "Rust", "Zig"],
+		"targetPlatforms": [],
+		"homeWebsite": "https://www.raylib.com/",
+		"docs": "https://github.com/raysan5/raylib/wiki"
+	},
+	{
+		"url": "threejs",
+		"name": "Three.js",
+		"subtitle": "JavaScript 3D Library",
+		"icon": ["https://upload.wikimedia.org/wikipedia/commons/3/3f/Three.js_Icon.svg", "#fff"],
+		"type": "3D Only",
+		"languages": ["JavaScript"],
+		"targetPlatforms": ["Web"],
+		"homeWebsite": "https://threejs.org/",
+		"docs": "https://threejs.org/docs/index.html#manual/introduction/Creating-a-scene"
+	},
+	{
+		"url": "webgl",
+		"name": "WebGL",
+		"subtitle": "Cross-platform, high performance 3D graphics on the web",
+		"icon": ["https://registry.khronos.org/webgl/resources/WebGL-Logo.svg", "#fff"],
+		"type": "2D and 3D",
+		"languages": ["JavaScript"],
+		"targetPlatforms": ["Web"],
+		"homeWebsite": "https://www.khronos.org/webgl/",
+		"docs": "https://www.khronos.org/webgl/wiki/"
+	}
+]

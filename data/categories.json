@@ -1,5 +1,7 @@
 {
-	"languages": ["C#", "C++", "GDScript", "Lua", "Nim", "Python", "Visual Scripting"],
-	"dimensions": ["2D Only", "2D-Emphasized", "2D and 3D", "3D-Emphasized", "3D Only"],
-	"platforms": ["Android", "BSD", "Fire OS", "iOS", "Linux", "Linux Server", "macOS", "Nintendo Switch", "PlayStation 4", "PlayStation 5", "tvOS", "Web", "Windows", "Xbox One", "Xbox Series X/S"]
+	"languages": ["", "Ada", "Assembly", "C#", "C++", "D", "F#", "GDScript", "Go", "Java", "JavaScript", "Lisp", "Lua", "Nim", "Pascal", "Python", "Rust", "Visual Scripting" ,"Zig"],
+
+	"dimensions": ["", "2D Only", "2D-Emphasized", "2D and 3D", "3D-Emphasized", "3D Only"],
+
+	"platforms": ["", "Android", "BSD", "Fire OS", "Game Boy Advance", "Game Boy Color", "GameCube", "GP32", "iOS", "Linux", "Linux Server", "macOS", "Nintendo 3DS", "Nintendo DS", "Nintendo Switch", "PlayStation 4", "PlayStation 5", "PlayStation Portable", "tvOS", "Web", "Wii", "Wii U", "Windows", "Xbox One", "Xbox Series X/S"]
 }
