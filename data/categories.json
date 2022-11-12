@@ -3,5 +3,5 @@
 
 	"dimensions": ["", "2D Only", "2D-Emphasized", "2D and 3D", "3D-Emphasized", "3D Only"],
 
-	"platforms": ["", "Android", "BSD", "Fire OS", "Game Boy Advance", "Game Boy Color", "GameCube", "GP32", "iOS", "Linux", "Linux Server", "macOS", "Nintendo 3DS", "Nintendo DS", "Nintendo Switch", "PlayStation 4", "PlayStation 5", "PlayStation Portable", "tvOS", "Web", "Wii", "Wii U", "Windows", "Xbox One", "Xbox Series X/S"]
+	"platforms": ["", "Android", "BSD", "Fire OS", "Game Boy Advance", "Game Boy Color", "GameCube", "GP32", "iOS", "Linux", "Linux Server", "macOS", "Nintendo 3DS", "Nintendo DS", "Nintendo Switch", "Oculus Rift", "PlayStation 4", "PlayStation 5", "PlayStation Portable", "Raspberry Pi", "tvOS", "Web", "Wii", "Wii U", "Windows", "Xbox One", "Xbox Series X/S"]
 }

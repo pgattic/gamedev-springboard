@@ -1,9 +1,20 @@
 [
 	{
+		"url": "cocos2d-x",
+		"name": "Cocos2d-x",
+		"subtitle": "Build amazing games and software that works on phones, tablets, PCs, and the web",
+		"icon": ["https://cocos2d-x.org/images/logo.png", "#fff"],
+		"type": "2D-Emphasized",
+		"languages": ["JavaScript", "Lua"],
+		"targetPlatforms": ["Android", "iOS", "Linux", "macOS", "Windows"],
+		"homeWebsite": "https://www.cocos.com/en/cocos2dx",
+		"docs": "https://docs.cocos.com/cocos2d-x/manual/"
+	},
+	{
 		"url": "directpython",
 		"name": "DirectPython 11",
 		"subtitle": "Use DirectX with Python",
-		"icon": ["https://directpython11.sourceforge.net/images/bg.png"],
+		"icon": ["https://directpython11.sourceforge.net/images/bg.png", "#fff"],
 		"type": "3D Only",
 		"languages": ["Python"],
 		"targetPlatforms": ["Windows"],
@@ -33,13 +44,24 @@
 		"docs": "https://love2d.org/wiki/"
 	},
 	{
+		"url": "melonjs",
+		"name": "melonJS",
+		"subtitle": "A fresh, modern & lightweight HTML5 game engine",
+		"icon": ["https://melonjs.org/img/favicon.svg", "#202020"],
+		"type": "2D Only",
+		"languages": ["JavaScript"],
+		"targetPlatforms": ["Web"],
+		"homeWebsite": "https://melonjs.org/",
+		"docs": "https://melonjs.github.io/melonJS/docs/"
+	},
+	{
 		"url": "opengl",
-		"name": "OpenGL",
+		"name": "OpenGL (GLU/GLUT)",
 		"subtitle": "The Industry's Foundation for High Performance Graphics",
 		"icon": ["https://www.opengl.org/img/opengl_logo.jpg", "#fff"],
 		"type": "2D and 3D",
 		"languages": ["Ada", "BASIC", "C#", "C++", "Fortran", "Haskell", "Java", "Lisp", "Lua", "Pascal", "Perl", "Python", "Racket", "Ruby"],
-		"targetPlatforms": [],
+		"targetPlatforms": ["Linux", "macOS", "Windows"],
 		"homeWebsite": "https://www.opengl.org/",
 		"docs": "https://www.khronos.org/opengl/wiki/"
 	},
@@ -47,7 +69,7 @@
 		"url": "panda3d",
 		"name": "Panda3D",
 		"subtitle": "The open source framework for 3d rendering and games",
-		"icon": ["https://www.panda3d.org/wp-content/uploads/2018/12/panda3d_icon-1.png"],
+		"icon": ["https://www.panda3d.org/wp-content/uploads/2018/12/panda3d_icon-1.png", "#323031"],
 		"type": "3D Only",
 		"languages": ["Python"],
 		"targetPlatforms": [],
@@ -55,10 +77,21 @@
 		"docs": "https://docs.panda3d.org/"
 	},
 	{
+		"url": "phaser",
+		"name": "Phaser",
+		"subtitle": "A fast, fun and free open source HTML5 game framework",
+		"icon": ["https://phaser.io/images/img.png", "#fff"],
+		"type": "2D Only",
+		"languages": ["JavaScript", "TypeScript"],
+		"targetPlatforms": ["Android", "iOS", "Web"],
+		"homeWebsite": "https://phaser.io/",
+		"docs": "https://phaser.io/learn"
+	},
+	{
 		"url": "pixijs",
 		"name": "PixiJS",
 		"subtitle": "The HTML5 Creation Engine",
-		"icon": ["https://raw.githubusercontent.com/pixijs/pixijs/ac965dd593f766a19ba9592e538a47f936f51739/packages/assets/test/assets/svg/logo.svg", "#fff"],
+		"icon": ["https://raw.githubusercontent.com/pixijs/pixijs/ac965dd593f766a19ba9592e538a47f936f51739/packages/assets/test/assets/svg/logo.svg", "#272b34"],
 		"type": "2D Only",
 		"languages": ["JavaScript"],
 		"targetPlatforms": ["Web"],
