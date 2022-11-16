@@ -4,41 +4,59 @@
 		<meta charset="UTF-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<title>Browser</title>
+		<meta name="theme-color" content="#a1cda8">
+		<title>Browser - Gamedev Springboard</title>
+		<link rel="stylesheet" href="css/main.css">
+		<link rel="icon" type="image/x-icon" href="img/logo.png">
 	</head>
 	<body>
-		<h1>Let's Get Started!</h1>
+		<nav>
+			<img src="img/logo.png">
+			<button id="mobile-nav">III</button>
+			<div id="menu-buttons">
+				<a href="index.html">Home</a>
+				<a href="browser.html" class="selected">Engine/Library Browser</a>
+				<a href="about.html">About</a>
+			</div>
+		</nav>
+		<div id="content">
+			<h1>Let's Get Started!</h1>
 
 
-		<form action="engines.html">
-			<h2>I am looking for a: </h2>
-			<input type="radio" id="html" name="fav_language" value="engine">
-			<label for="html">Game Engine</label><br>
+			<form action="results.html">
+				<fieldset>
+					<legend>I am looking for a: </legend>
+					<input type="radio" id="html" name="fav_language" value="engine">
+					<label for="html">Game Engine</label><br>
 
-			<input type="radio" id="css" name="fav_language" value="glib">
-			<label for="css">Graphics Library</label><br>
+					<input type="radio" id="css" name="fav_language" value="glib">
+					<label for="css">Graphics Library</label><br>
 
-			<input type="radio" id="javascript" name="fav_language" value="compiler">
-			<label for="javascript">Code Compiler/Interpreter</label>
+					<input type="radio" id="javascript" name="fav_language" value="compiler">
+					<label for="javascript">Code Compiler/Interpreter</label>
+				</fieldset>
 
 
-			<!-- <label for="lang">Programming Language:</label><br>
-			<select id="lang" name="lang" multiple></select><br> -->
+				<!-- <label for="lang">Programming Language:</label><br>
+				<select id="lang" name="lang" multiple></select><br> -->
 
-			<div id="langs"><h2>Languages:</h2></div>
+				<fieldset><legend>Languages:</legend><div id="langs"></div></fieldset>
 
-			<div id="targets"><h2>Target Platform:</h2></div>
-			<!-- <label for="type">Engine Type:</label><br>
-			<select id="type" name="type"></select><br> -->
+				<fieldset><legend>Target Platform:</legend><div id="targets"></div></fieldset>
+				<!-- <label for="type">Engine Type:</label><br>
+				<select id="type" name="type"></select><br> -->
 
-			<!-- <label for="target">Target Platform:</label><br>
-			<select id="target" name="target"></select><br> -->
+				<!-- <label for="target">Target Platform:</label><br>
+				<select id="target" name="target"></select><br> -->
 
-			<input type="submit" value="Submit">
-		</form>
+				<input type="submit" value="Submit">
+			</form>
+		</div>
+		<footer>
+			<p>Hand-crafted in Vanilla HTML5 by Preston Corless. <a href="https://github.com/pgattic/gamedev-springboard" target="_blank">Source Code</a></p>
+		</footer>
+		<script src="js/main.js"></script>
 		<script>
-
-const $=(x)=>{return document.querySelector(x)}
 
 function populateForm(data, target) {
 	for (var i = 0; i < data.length; i++) {

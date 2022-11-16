@@ -1,17 +1,91 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+@import url('https://fonts.googleapis.com/css?family=Quicksand');
+
+:root {
+	--primary: #627264;
+	--secondary: #a1cda8;
+	--accent1: #b5dfca;
+	--accent2: #d5f7f2;
+	--accent3: #ffffff;
+}
 
 * {
-	font-family: Arial;
+	font-family: Roboto;
+}
+
+h1, h2, h3, h4 {
+	font-family: Quicksand;
+	color: var(--primary);
+}
+
+h1, h2 {
+	background-color: var(--accent3);
+	width:fit-content;
+	padding: 8px 12px;
+	border-radius: 16px;
+	margin: 0;
+}
+
+nav * {
+	display: inline-block;
+}
+
+nav img {
+	width: 48px;
+	border-radius: 50%;
+	margin: 4px;
+}
+
+nav {
+	background-color: var(--secondary);
+	position: fixed;
+	top: 0;
+	width: 100%;
+}
+
+nav a, #mobile-nav {
+	padding: 14px;
+	margin: 4px 2px;
+	color: var(--primary);
+	text-decoration: none;
+	background-color: var(--accent2);
+	border-radius: 300px;
+}
+
+#mobile-nav {
+	border: none;
+	transform: rotate(90deg);
+	float:right;
+	display: none;
+	width: 48px;
+	height: 48px;
+	font-size: 18px;
+	font-weight: bold;
+}
+
+nav div {
+	float: right;
+}
+
+.selected {
+	background-color: #fff;
+}
+
+nav a:hover {
+	background-color: #fff;
 }
 
 body {
-	background-color: #ccc;
+	background-color: var(--accent1);
+	margin: 0;
 }
 
 #content {
 	max-width: 1000px;
 	padding: 24px;
-	margin: 0 auto;
-	background-color: #fff;
+	margin: 72px auto 0;
+	background-color: var(--accent2);
+	border-radius: 16px;
 }
 
 .icon {
@@ -27,11 +101,12 @@ body {
 .entry {
 	min-height: 100px;
 	border-radius: 16px;
-	box-shadow: 0 0 12px #0008;
+	box-shadow: 0 0 8px #0008;
 	margin: 12px;
 	padding: 12px;
 	display: grid;
-	grid-template-columns:min-content auto;
+	grid-template-columns: min-content auto;
+	background-color: #fff;
 }
 
 .entry p {
@@ -41,12 +116,14 @@ body {
 .entry h3 {
 	margin: 0;
 	padding: 8px 0 8px 12px;
+	white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
 }
 
 .entry h3 span {
 	font-weight:normal;
 	font-size: 16px;
-	margin-left: 8px;
 	text-overflow: ellipsis;
 	color: #777
 }
@@ -54,10 +131,35 @@ body {
 .entry h3 a {
 	text-decoration: none;
 	color: #35b;
+	margin-right: 8px;
 }
 
 .entry .info {
 	margin: 8px 0 0;
 	grid-column: 1;
 	grid-area: 2 / 1 / span 1 / span 2;
+}
+
+.menu-showing {
+	margin-top: 0;
+}
+
+@media only screen and (max-width: 600px) {
+	nav div {
+		width: 100%;
+		transition-duration: 0.25s;
+		margin-top: -250px;
+	}
+	nav a {
+		display: block;
+	}
+	#mobile-nav {
+		display: initial;
+	}
+	.menu-showing {
+		margin-top: 0;
+	}
+	.entry h3 a {
+		display:block;
+	}
 }

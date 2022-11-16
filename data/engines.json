@@ -11,7 +11,7 @@
 		"installWebsite": "https://armory3d.org/download",
 		"tutorialWebsite": "https://github.com/armory3d/armory/wiki/community_tutorials",
 		"docs": "https://github.com/armory3d/armory/wiki",
-		"icon": ["https://armory3d.org/img/logo-armory.webp", "#cc2c42"],
+		"icon": ["https://armory3d.org/img/logo-armory.png", "#cc2c42"],
 		"hasPremium": false,
 		"note": ""
 	},

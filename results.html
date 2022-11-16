@@ -4,10 +4,21 @@
 		<meta charset="UTF-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<title>Game Engines</title>
+		<meta name="theme-color" content="#a1cda8">
+		<title>Search Results - Gamedev Springboard</title>
 		<link rel="stylesheet" href="css/main.css">
+		<link rel="icon" type="image/x-icon" href="img/logo.png">
 	</head>
 	<body>
+		<nav>
+			<img src="img/logo.png">
+			<button id="mobile-nav">III</button>
+			<div id="menu-buttons">
+				<a href="index.html">Home</a>
+				<a href="browser.html">Engine/Library Browser</a>
+				<a href="about.html">About</a>
+			</div>
+		</nav>
 		<div id="content">
 			<h1>Results</h1>
 			<h2>Information:</h2>
@@ -21,9 +32,8 @@
 			<h2>Graphics Libraries: </h2>
 			<div id="lib-display"></div>
 		</div>
+		<script src="js/main.js"></script>
 		<script>
-
-var $=x=>{return document.querySelector(x)};
 
 
 function display(content, target) {
