@@ -53,7 +53,7 @@
 			</form>
 		</div>
 		<footer>
-			<p>Hand-crafted in Vanilla HTML5 by Preston Corless. <a href="https://github.com/pgattic/gamedev-springboard" target="_blank">Source Code</a></p>
+			<p>Hand-crafted in vanilla HTML5 by Preston Corless. <a href="https://github.com/pgattic/gamedev-springboard" target="_blank">Source Code</a></p>
 		</footer>
 		<script src="js/main.js"></script>
 		<script>
@@ -74,13 +74,14 @@ function populateCheckbox(data, type, target, label = "element", start = 0) {
 		newElem.value = i;
 		newElem.name = label;
 		newElem.id = label + i;
-		target.append(newElem);
 		var newLabel = document.createElement("label");
 		newLabel.setAttribute("for", newElem.id);
 		console.log(newLabel.for);
 		newLabel.innerText = data[i];
-		target.append(newLabel);
-		target.append(document.createElement("br"))
+
+		var newDiv = document.createElement("div");
+		newDiv.append(newElem, newLabel);
+		target.append(newDiv);
 	}
 }
 
