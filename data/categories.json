@@ -1,7 +1,11 @@
 {
-	"languages": ["", "Ada", "Assembly", "C#", "C++", "D", "F#", "GDScript", "Go", "Haxe", "Java", "JavaScript", "Lisp", "Lua", "Nim", "Pascal", "Python", "Rust", "TypeScript", "Visual Scripting", "Zig"],
+	"languages": ["", "Ada", "BASIC", "C", "C#", "C++", "D", "F#", "GDScript", "Go", "Haxe", "Java", "JavaScript", "Lisp", "Lua", "Nim", "Pascal", "Python", "Rust", "TypeScript", "Visual Scripting", "Zig"],
 
 	"dimensions": ["", "2D Only", "2D-Emphasized", "2D and 3D", "3D-Emphasized", "3D Only"],
 
-	"platforms": ["", "Android", "BSD", "Fire OS", "Game Boy Advance", "Game Boy Color", "GameCube", "GP32", "iOS", "Linux", "Linux Server", "macOS", "Nintendo 3DS", "Nintendo DS", "Nintendo Switch", "Oculus Rift", "PlayStation 4", "PlayStation 5", "PlayStation Portable", "Raspberry Pi", "tvOS", "Web", "Wii", "Wii U", "Windows", "Xbox One", "Xbox Series X/S"]
+	"platforms": ["", "Android", "BSD", "Fire OS", "Game Boy Color", "iOS", "Linux", "macOS", "Nintendo Switch", "Oculus Rift", "PlayStation 4", "PlayStation 5", "Raspberry Pi", "tvOS", "Web", "Wii U", "Windows", "Xbox One", "Xbox Series X/S"], 
+
+	"unusedLanguages": ["Assembly"],
+
+	"unusedPlatforms": ["Game Boy Advance", "GameCube", "GP32", "Linux Server", "Nintendo 3DS", "Nintendo DS", "PlayStation Portable", "Roblox", "Wii"]
 }

@@ -5,13 +5,13 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<meta name="theme-color" content="#a1cda8">
-		<title>Search Results - Gamedev Springboard</title>
+		<title>Search Results - GameDev Springboard</title>
 		<link rel="stylesheet" href="css/main.css">
 		<link rel="icon" type="image/x-icon" href="img/logo.png">
 	</head>
 	<body>
 		<nav>
-			<img src="img/logo.png">
+			<img src="img/logo.png" alt="GameDev Springboard Logo">
 			<button id="mobile-nav">III</button>
 			<div id="menu-buttons">
 				<a href="index.html">Home</a>
@@ -21,16 +21,14 @@
 		</nav>
 		<div id="content">
 			<h1>Results</h1>
-			<h2>Information:</h2>
-			<p>For me, entering the Game Development world was very difficult when I was younger, as I didn't know where to start, or which path to take. I think a large part of that was simply not knowing enough about how to begin. For this reason, I began documenting the different methods to create video games for different systems. One such example was a <a href="https://docs.google.com/spreadsheets/d/1p6EM3h34s7B2LSoq1twFvjw-8X--FBGwBYeg4m9_5WM/edit?usp=sharing" target="_blank">spreadsheet</a> containing information about which tools to use to compile or run different programming languages on different gaming systems and consoles I used growing up.</p>
-			<p>Although such information was useful, I knew this wasn't all there was, and I also knew that these means to demonstrate the information were limited. This, I set out to create a tool that improves upon this current information, makes it more accessible, and makes it easy to get started. The obvious answer was to create a web site. This has brought me to where I am today.</p>
 
 			<p>This page dynamically renders its content based on the information contained in <a href="data/engines.json">a .json file</a>!</p>
 			<p><span id="chosen"></span></p>
+			<p><a href="browser.html">Back to Browser</a></p>
 			<h2>Game Engines: </h2>
-			<div id="engine-display"></div>
+			<section id="engine-display"></section>
 			<h2>Graphics Libraries: </h2>
-			<div id="lib-display"></div>
+			<section id="lib-display"></section>
 		</div>
 		<footer>
 			<p>Hand-crafted in vanilla HTML5 by Preston Corless. <a href="https://github.com/pgattic/gamedev-springboard" target="_blank">Source Code</a></p>
@@ -39,65 +37,72 @@
 		<script>
 
 
-function display(content, target) {
-	for (var i = 0; i < content.length; i++) {
-		var entry = document.createElement("div");
-
-		/* create img element for each entry */
-		var icon = document.createElement("img");
-		icon.src = content[i].icon[0];
-		icon.style = "background-color: "+content[i].icon[1]
-		icon.classList.add("icon");
-		
-		/* create Title element for each entry */
-		var link = document.createElement("a");
-		link.innerText = content[i].name;
-		link.href = content[i].homeWebsite;
-		link.target = "_blank";
-		var title = document.createElement("h3");
-		title.append(link);
-
-		var engineType = document.createElement("p");
-		engineType.innerText = content[i].type;
-
-		/* Create Subtitle element for each entry */
-		var subtitle = document.createElement("span");
-		subtitle.innerText = content[i].subtitle;
-		title.append(subtitle, engineType);
-
-		var engineLanguage = document.createElement("p");
-		engineLanguage.innerText = "Languages: " + content[i].languages.join(", ");
-
-		// var sourceOS = document.createElement("p");
-		// sourceOS.innerText = "Source OS: " + content[i].sourcePlatforms.join(", ");
-
-		var targetOS = document.createElement("p");
-		targetOS.innerText = "Target Platforms: " + content[i].targetPlatforms.join(", ");
-
-		var info = document.createElement("div");
-		info.classList.add("info")
-		info.append(engineLanguage, targetOS)
-
-		entry.append(icon, title, info);
-		entry.classList.add("entry");
+function display(content, target, name) {
+	if (content.length == 0) {
+		var entry = document.createElement("p");
+		entry.innerText = `No ${name} found. Please try the search again with less target platforms or more programming languages!`;
 		target.append(entry);
+	} else {
+		for (var i = 0; i < content.length; i++) {
+			var entry = document.createElement("div");
+
+			/* create img element for each entry */
+			var icon = document.createElement("img");
+			icon.src = content[i].icon[0];
+			icon.alt = content[i].name + " Icon";
+			icon.style = "background-color: "+content[i].icon[1];
+			icon.classList.add("icon");
+			
+			/* create Title element for each entry */
+			var link = document.createElement("a");
+			link.innerText = content[i].name;
+			link.href = content[i].homeWebsite;
+			link.target = "_blank";
+			var title = document.createElement("h3");
+			title.append(link);
+
+			var engineType = document.createElement("p");
+			engineType.innerText = content[i].type;
+
+			/* Create Subtitle element for each entry */
+			var subtitle = document.createElement("span");
+			subtitle.innerText = content[i].subtitle;
+			title.append(subtitle, engineType);
+
+			var engineLanguage = document.createElement("p");
+			engineLanguage.innerText = "Languages: " + content[i].languages.join(", ");
+
+			// var sourceOS = document.createElement("p");
+			// sourceOS.innerText = "Source OS: " + content[i].sourcePlatforms.join(", ");
+
+			var targetOS = document.createElement("p");
+			targetOS.innerText = "Target Platforms: " + content[i].targetPlatforms.join(", ");
+
+			var info = document.createElement("div");
+			info.classList.add("info");
+			info.append(engineLanguage, targetOS);
+
+			entry.append(icon, title, info);
+			entry.classList.add("entry");
+			target.append(entry);
+		}
 	}
 }
 
 async function retrieve(url) {
 	const response = await fetch(url);
-	return await response.json()
+	return await response.json();
 }
 
-function filter(data, key, value, isArray = false) {
+function filter(data, key, value, allInclusive = false) {
 	if (value == "") { // no value specified by user, no filtering to be done
 		return data;
 	}
 	for (var i = 0; i < data.length; i++) {
 		var dataArray = data[i][key];
-		if (
-			(isArray && !(value.some(e=>dataArray.includes(e)))) || 
-			(!isArray && data[i][key] != value)) {
+		if (allInclusive ?
+		value.some(e=>!dataArray.includes(e)) :
+		!value.some(e=>dataArray.includes(e))) {
 			data.splice(i, 1);
 			i--;
 		}
@@ -105,34 +110,27 @@ function filter(data, key, value, isArray = false) {
 	return data;
 }
 
-retrieve("data/engines.json").then((data)=>{
-	retrieve("data/categories.json").then((filters)=>{
-		console.log(data)
-		var url = new URL(window.location);
-		var targetLang = (url.searchParams.getAll("lang") || [0]).map((i)=>{return filters.languages[i]}); // Get target languages as array of strings
-		var targetType = filters.dimensions[url.searchParams.get("type") || 0]; // Get target language as a string
-		var targetSys = filters.platforms[url.searchParams.get("target") || 0]; // Get target language as a string
-		chosen.innerText = "Chosen Language: " + targetLang + " Chosen Target Platform: " + targetSys;
-		data = filter(data, "languages", targetLang, true);
-//		data = filter(data, "type", targetType, false);
-//		data = filter(data, "targetPlatforms", targetSys, true);
-		display(data, $("#engine-display"))
-	})
-});
+retrieve("data/categories.json").then((filters) => {
+	var url = new URL(window.location);
 
+	var targetLang = (url.searchParams.getAll("lang") || [0]).map((i)=>{return filters.languages[i]}); // Get target languages as array of strings
+	var targetSys = (url.searchParams.getAll("target") || [0]).map((i)=>{return filters.platforms[i]}); // Get target language as array of strings
 
-retrieve("data/gfx-libs.json").then((data)=>{
-	retrieve("data/categories.json").then((filters)=>{
-		console.log(data)
-		var url = new URL(window.location);
-		var targetLang = (url.searchParams.getAll("lang") || [0]).map((i)=>{return filters.languages[i]}); // Get target languages as array of strings
-		var targetType = filters.dimensions[url.searchParams.get("type") || 0]; // Get target language as a string
-		var targetSys = filters.platforms[url.searchParams.get("target") || 0]; // Get target language as a string
-		data = filter(data, "languages", targetLang, true);
+	$("#chosen").innerHTML = "Chosen Language(s): <b>" + (targetLang.join("</b>, <b>")||"None") + "</b><br> Chosen Target Platform(s): <b>" + (targetSys.join("</b>, <b>")||"None") + "</b>";
+
+	retrieve("data/engines.json").then((data) => {
+		data = filter(data, "languages", targetLang, false);
+		data = filter(data, "targetPlatforms", targetSys, true);
 //		data = filter(data, "type", targetType, false);
-//		data = filter(data, "targetPlatforms", targetSys, true);
-		display(data, $("#lib-display"))
-	})
+		display(data, $("#engine-display"), "game engines");
+	});
+
+	retrieve("data/gfx-libs.json").then((data) => {
+		data = filter(data, "languages", targetLang, false);
+		data = filter(data, "targetPlatforms", targetSys, true);
+//		data = filter(data, "type", targetType, false);
+		display(data, $("#lib-display"), "graphics libraries");
+	});
 });
 
 

@@ -9,6 +9,8 @@
 	--accent3: #ffffff;
 }
 
+/* General things */
+
 * {
 	font-family: Roboto;
 }
@@ -20,11 +22,72 @@ h1, h2, h3, h4 {
 
 h1, h2 {
 	background-color: var(--accent3);
-	width:fit-content;
+	width: fit-content;
 	padding: 8px 12px;
 	border-radius: 16px;
 	margin: 0;
 }
+
+body {
+	background-color: var(--accent1);
+	margin: 0;
+}
+
+#content {
+	max-width: 1000px;
+	padding: 24px;
+	margin: 72px auto 0;
+	background-color: var(--accent2);
+	border-radius: 16px;
+}
+
+#content > p {
+	line-height: 1.2em;
+	font-size: 1.3em;
+}
+
+a {
+	color: var(--primary);
+}
+
+
+.blog-img {
+	width: 400px;
+}
+
+.blog-img img {
+	width: 400px;
+	border-radius: 8px;
+	object-fit:cover;
+	max-width:100%;
+}
+
+.blog-img p {
+	font-size: 16px;
+	text-align: center;
+	font-style: italic;
+	text-indent: 0;
+	line-height: 18px;
+	margin: 4px 0;
+}
+
+.img-r {
+	float: right;
+	margin-left: 16px;
+}
+
+.img-l {
+	float: left;
+	margin-right: 16px;
+}
+
+
+footer p {
+	text-align: center;
+	margin: 16px;
+}
+
+/* navbar */
 
 nav * {
 	display: inline-block;
@@ -52,6 +115,10 @@ nav a, #mobile-nav {
 	border-radius: 300px;
 }
 
+nav a:hover {
+	background-color: #fff;
+}
+
 #mobile-nav {
 	border: none;
 	transform: rotate(90deg);
@@ -71,26 +138,7 @@ nav div {
 	background-color: #fff;
 }
 
-nav a:hover {
-	background-color: #fff;
-}
-
-body {
-	background-color: var(--accent1);
-	margin: 0;
-}
-
-#content {
-	max-width: 1000px;
-	padding: 24px;
-	margin: 72px auto 0;
-	background-color: var(--accent2);
-	border-radius: 16px;
-}
-
-a {
-	color: var(--primary);
-}
+/* Search Page */
 
 #langs, #targets {
 	display: flex;
@@ -100,6 +148,14 @@ a {
 #langs div, #targets div {
 	width: 180px;
 }
+
+fieldset {
+	border: none;
+	margin: 12px 0;
+	padding: 6px 0
+}
+
+/* Search Results Page */
 
 .icon {
 	float:left;
@@ -153,11 +209,12 @@ a {
 	grid-area: 2 / 1 / span 1 / span 2;
 }
 
-footer p {
-	text-align: center;
-	margin: 16px;
+#engine-display > p, #lib-display > p {
+	text-align:center;
 }
 
+
+/* Mobile stuff */
 
 .menu-showing {
 	margin-top: 0;
@@ -180,5 +237,14 @@ footer p {
 	}
 	.entry h3 a {
 		display:block;
+	}
+
+	.img-r, .img-l {
+		float: initial;
+		text-align:center;
+		margin:0;
+	}
+	.blog-img {
+		width: 100%;
 	}
 }

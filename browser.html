@@ -5,13 +5,13 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<meta name="theme-color" content="#a1cda8">
-		<title>Browser - Gamedev Springboard</title>
+		<title>Browser - GameDev Springboard</title>
 		<link rel="stylesheet" href="css/main.css">
 		<link rel="icon" type="image/x-icon" href="img/logo.png">
 	</head>
 	<body>
 		<nav>
-			<img src="img/logo.png">
+			<img src="img/logo.png" alt="GameDev Springboard Logo">
 			<button id="mobile-nav">III</button>
 			<div id="menu-buttons">
 				<a href="index.html">Home</a>
@@ -22,9 +22,10 @@
 		<div id="content">
 			<h1>Let's Get Started!</h1>
 
+			<p>Leaving these fields blank will return all engines and libraries</p>
 
 			<form action="results.html">
-				<fieldset>
+				<!-- <fieldset>
 					<legend>I am looking for a: </legend>
 					<input type="radio" id="html" name="fav_language" value="engine">
 					<label for="html">Game Engine</label><br>
@@ -34,15 +35,15 @@
 
 					<input type="radio" id="javascript" name="fav_language" value="compiler">
 					<label for="javascript">Code Compiler/Interpreter</label>
-				</fieldset>
+				</fieldset> -->
 
 
 				<!-- <label for="lang">Programming Language:</label><br>
 				<select id="lang" name="lang" multiple></select><br> -->
 
-				<fieldset><legend>Languages:</legend><div id="langs"></div></fieldset>
+				<fieldset><legend>Languages:*</legend><div id="langs"></div><small>*Language filtering is on an "any/either" basis (i.e. selecting more languages will broaden the results)</small></fieldset>
 
-				<fieldset><legend>Target Platform:</legend><div id="targets"></div></fieldset>
+				<fieldset><legend>Target Platform:**</legend><div id="targets"></div><small>**Target Platform filtering is done on an "all" basis (i.e. selecting more target platforms will narrow down the results)</small></fieldset>
 				<!-- <label for="type">Engine Type:</label><br>
 				<select id="type" name="type"></select><br> -->
 
@@ -62,7 +63,7 @@ function populateForm(data, target) {
 	for (var i = 0; i < data.length; i++) {
 		var newElem = document.createElement("option");
 		newElem.innerText = data[i];
-		newElem.value = i
+		newElem.value = i;
 		target.append(newElem);
 	}
 }
@@ -95,7 +96,7 @@ function display(content) {
 
 async function retrieve(url) {
 	const response = await fetch(url);
-	return await response.json()
+	return await response.json();
 }
 
 retrieve("data/categories.json").then((libs)=>{display(libs)});
