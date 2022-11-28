@@ -427,7 +427,7 @@
 		"installWebsite": "http://rpg-paper-maker.com/index.php/downloads",
 		"tutorialWebsite": "",
 		"docs": "https://rpg-paper-maker.gitbook.io/rpg-paper-maker/",
-		"icon": ["https://avatars.githubusercontent.com/u/16018766?v=4", "#e59642"],
+		"icon": ["https://rpg-paper-maker.com/uploads/kate.png", "#e59642"],
 		"hasPremium": true,
 		"note": ""
 	},

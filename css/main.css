@@ -2,7 +2,7 @@
 @import url('https://fonts.googleapis.com/css?family=Quicksand');
 
 :root {
-	--primary: #627264;
+	--primary: #526254;
 	--secondary: #a1cda8;
 	--accent1: #b5dfca;
 	--accent2: #d5f7f2;
@@ -25,7 +25,7 @@ h1, h2 {
 	width: fit-content;
 	padding: 8px 12px;
 	border-radius: 16px;
-	margin: 0;
+	margin: 0 0 12px;
 }
 
 body {
@@ -42,7 +42,7 @@ body {
 }
 
 #content > p {
-	line-height: 1.2em;
+	line-height: 1.4em;
 	font-size: 1.3em;
 }
 
@@ -152,7 +152,19 @@ nav div {
 fieldset {
 	border: none;
 	margin: 12px 0;
-	padding: 6px 0
+	padding: 6px 0;
+	font-size: 20px;
+}
+
+input[type="submit"] {
+	font-size: 32px;
+	display: block;
+	margin: 0 auto;
+	background-color: #fff;
+	border: none;
+	border-radius: 12px;
+	padding: 8px;
+	cursor: pointer;
 }
 
 /* Search Results Page */
