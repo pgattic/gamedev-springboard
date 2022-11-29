@@ -53,13 +53,38 @@ a {
 
 .blog-img {
 	width: 400px;
+	position: relative;
 }
 
-.blog-img img {
+.blog-img img, .blog-img > div {
 	width: 400px;
 	border-radius: 8px;
 	object-fit:cover;
 	max-width:100%;
+}
+
+.overlay {
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	opacity: 0;
+	transition: .5s ease;
+	background-color: #ccc;
+}
+  
+.overlay:hover  {
+	opacity: 1;
+}
+
+.text {
+	position: absolute;
+	font-size: 64px;
+	top: 50%;
+	left: 50%;
+	-webkit-transform: translate(-50%, -50%);
+	-ms-transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%);
+	text-align: center;
 }
 
 .blog-img p {
