@@ -57,10 +57,10 @@ a {
 }
 
 .blog-img img, .blog-img > div {
-	width: 400px;
+	width: 100%;
+	max-width: 400px;
 	border-radius: 8px;
-	object-fit:cover;
-	max-width:100%;
+	object-fit: cover;
 }
 
 .overlay {
@@ -129,6 +129,7 @@ nav {
 	position: fixed;
 	top: 0;
 	width: 100%;
+	z-index: 1;
 }
 
 nav a, #mobile-nav {
@@ -279,9 +280,9 @@ input[type="submit"] {
 	.img-r, .img-l {
 		float: initial;
 		text-align:center;
-		margin:0;
+		margin: 0 auto;
 	}
 	.blog-img {
-		width: 100%;
+		width: fit-content;
 	}
 }
