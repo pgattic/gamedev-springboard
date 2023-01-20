@@ -1,5 +1,5 @@
 {
-	"languages": ["", "Ada", "BASIC", "C", "C#", "C++", "D", "F#", "GDScript", "Go", "Haxe", "Java", "JavaScript", "Lisp", "Lua", "Nim", "Pascal", "Python", "Rust", "TypeScript", "Visual Scripting", "Zig"],
+	"languages": ["", "Ada", "BASIC", "C", "C#", "C++", "D", "F#", "GDScript", "Go", "Haxe", "Java", "JavaScript", "Kotlin", "Lisp", "Lua", "Nim", "Pascal", "Python", "Rust", "TypeScript", "Visual Scripting", "Zig"],
 
 	"dimensions": ["", "2D Only", "2D-Emphasized", "2D and 3D", "3D-Emphasized", "3D Only"],
 
