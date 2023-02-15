@@ -11,7 +11,7 @@
 		"installWebsite": "https://armory3d.org/download",
 		"tutorialWebsite": "https://github.com/armory3d/armory/wiki/community_tutorials",
 		"docs": "https://github.com/armory3d/armory/wiki",
-		"icon": ["https://armory3d.org/img/logo-armory.png", "#cc2c42"],
+		"icon": ["https://armory3d.org/img/navbar/logo-armory.png", "#D02741"],
 		"hasPremium": false,
 		"note": ""
 	},
@@ -164,7 +164,7 @@
 		"name": "ezEngine",
 		"subtitle": "free, open source game engine written in C++",
 		"type": "3D Only",
-		"languages": ["C++"],
+		"languages": ["C++", "TypeScript", "Visual Scripting"],
 		"sourcePlatforms": ["Windows"],
 		"targetPlatforms": ["Android", "Linux", "macOS", "Windows"],
 		"homeWebsite": "https://ezengine.net/",
