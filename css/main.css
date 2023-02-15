@@ -166,7 +166,7 @@ input[type="submit"] {
 	font-size: 32px;
 	display: block;
 	margin: 0 auto;
-	background-color: #fff;
+	background-color: var(--pill);
 	border: none;
 	border-radius: 12px;
 	padding: 8px;
