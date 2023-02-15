@@ -2,11 +2,14 @@
 @import url('https://fonts.googleapis.com/css?family=Quicksand');
 
 :root {
-	--primary: #526254;
-	--secondary: #a1cda8;
-	--accent1: #b5dfca;
-	--accent2: #d5f7f2;
-	--accent3: #ffffff;
+	--primary: #afa;
+	--secondary: #333;
+	--accent1: #444;
+	--accent2: #555;
+	--pill: #777;
+	--main-text: #fff;
+	--link: #afa;
+	color-scheme: dark;
 }
 
 /* General things */
@@ -21,7 +24,7 @@ h1, h2, h3, h4 {
 }
 
 h1, h2 {
-	background-color: var(--accent3);
+	background-color: var(--pill);
 	width: fit-content;
 	padding: 8px 12px;
 	border-radius: 16px;
@@ -39,6 +42,7 @@ body {
 	margin: 72px auto 0;
 	background-color: var(--accent2);
 	border-radius: 16px;
+	color: var(--main-text);
 }
 
 #content > p {
@@ -47,44 +51,19 @@ body {
 }
 
 a {
-	color: var(--primary);
+	color: var(--link);
 }
 
 
 .blog-img {
 	width: 400px;
-	position: relative;
 }
 
-.blog-img img, .blog-img > div {
+.blog-img img {
 	width: 100%;
 	max-width: 400px;
 	border-radius: 8px;
 	object-fit: cover;
-}
-
-.overlay {
-	position: absolute;
-	height: 100%;
-	width: 100%;
-	opacity: 0;
-	transition: .5s ease;
-	background-color: #ccc;
-}
-  
-.overlay:hover  {
-	opacity: 1;
-}
-
-.text {
-	position: absolute;
-	font-size: 64px;
-	top: 50%;
-	left: 50%;
-	-webkit-transform: translate(-50%, -50%);
-	-ms-transform: translate(-50%, -50%);
-	transform: translate(-50%, -50%);
-	text-align: center;
 }
 
 .blog-img p {
@@ -110,6 +89,7 @@ a {
 footer p {
 	text-align: center;
 	margin: 16px;
+	color: var(--main-text);
 }
 
 /* navbar */
@@ -135,14 +115,14 @@ nav {
 nav a, #mobile-nav {
 	padding: 14px;
 	margin: 4px 2px;
-	color: var(--primary);
+	color: var(--link);
 	text-decoration: none;
 	background-color: var(--accent2);
 	border-radius: 300px;
 }
 
 nav a:hover {
-	background-color: #fff;
+	background-color: var(--pill);
 }
 
 #mobile-nav {
@@ -161,7 +141,7 @@ nav div {
 }
 
 .selected {
-	background-color: #fff;
+	background-color: var(--pill);
 }
 
 /* Search Page */
@@ -213,7 +193,7 @@ input[type="submit"] {
 	padding: 12px;
 	display: grid;
 	grid-template-columns: min-content auto;
-	background-color: #fff;
+	background-color: #777;
 }
 
 .entry p {
@@ -237,8 +217,12 @@ input[type="submit"] {
 
 .entry h3 a {
 	text-decoration: none;
-	color: #35b;
+	color: #fff;
 	margin-right: 8px;
+}
+
+.entry h3 a:hover {
+	text-decoration: underline;
 }
 
 .entry .info {
