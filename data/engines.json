@@ -251,7 +251,7 @@
 		"installWebsite": "https://gdevelop.io/download",
 		"tutorialWebsite": "",
 		"docs": "https://wiki.gdevelop.io/",
-		"icon": ["https://wiki.gdevelop.io/_media/wiki/logo.png", "#4ab0e4"],
+		"icon": ["https://gdevelop.io/favicons/apple-touch-icon.png", ""],
 		"hasPremium": false,
 		"note": ""
 	},
@@ -363,7 +363,7 @@
 		"installWebsite": "",
 		"tutorialWebsite": "",
 		"docs": "https://www.o3de.org/docs",
-		"icon": ["https://www.o3de.org/img/logos/O3DE-Logo-with-color.svg", "#fff"],
+		"icon": ["img/engine-icons/O3DE.svg", "#fff"],
 		"hasPremium": false,
 		"note": ""
 	},
@@ -411,7 +411,7 @@
 		"installWebsite": "",
 		"tutorialWebsite": "",
 		"docs": "https://create.roblox.com/docs",
-		"icon": ["https://create.roblox.com/assets/navigation/studio_white.svg", "#1d1d1d"],
+		"icon": ["https://create.roblox.com/assets/apple_touch_icon.png", "#1d1d1d"],
 		"hasPremium": false,
 		"note": ""
 	},

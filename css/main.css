@@ -2,14 +2,24 @@
 @import url('https://fonts.googleapis.com/css?family=Quicksand');
 
 :root {
+	color-scheme: dark;
+
 	--primary: #afa;
-	--secondary: #333;
-	--accent1: #444;
-	--accent2: #555;
-	--pill: #777;
 	--main-text: #fff;
 	--link: #afa;
-	color-scheme: dark;
+
+	--navbar: #444;
+	--nav-button: #555;
+	--nav-button-selected: #777;
+
+	--page-bg: #222;
+	--page-fg: #333;
+	--header-text: #555;
+
+	--results-entry-bg: #555;
+	--results-entry-title: var(--main-text);
+	--results-entry-sub: #ddd;
+	--results-entry-category: #fff;
 }
 
 /* General things */
@@ -24,7 +34,7 @@ h1, h2, h3, h4 {
 }
 
 h1, h2 {
-	background-color: var(--pill);
+	background-color: var(--header-text);
 	width: fit-content;
 	padding: 8px 12px;
 	border-radius: 16px;
@@ -32,7 +42,7 @@ h1, h2 {
 }
 
 body {
-	background-color: var(--accent1);
+	background-color: var(--page-bg);
 	margin: 0;
 }
 
@@ -40,7 +50,7 @@ body {
 	max-width: 1000px;
 	padding: 24px;
 	margin: 72px auto 0;
-	background-color: var(--accent2);
+	background-color: var(--page-fg);
 	border-radius: 16px;
 	color: var(--main-text);
 }
@@ -105,7 +115,7 @@ nav img {
 }
 
 nav {
-	background-color: var(--secondary);
+	background-color: var(--navbar);
 	position: fixed;
 	top: 0;
 	width: 100%;
@@ -117,12 +127,12 @@ nav a, #mobile-nav {
 	margin: 4px 2px;
 	color: var(--link);
 	text-decoration: none;
-	background-color: var(--accent2);
+	background-color: var(--nav-button);
 	border-radius: 300px;
 }
 
 nav a:hover {
-	background-color: var(--pill);
+	background-color: var(--nav-button-selected);
 }
 
 #mobile-nav {
@@ -141,7 +151,7 @@ nav div {
 }
 
 .selected {
-	background-color: var(--pill);
+	background-color: var(--nav-button-selected);
 }
 
 /* Search Page */
@@ -166,7 +176,7 @@ input[type="submit"] {
 	font-size: 32px;
 	display: block;
 	margin: 0 auto;
-	background-color: var(--pill);
+	background-color: var(--nav-button);
 	border: none;
 	border-radius: 12px;
 	padding: 8px;
@@ -188,12 +198,11 @@ input[type="submit"] {
 .entry {
 	min-height: 100px;
 	border-radius: 16px;
-	box-shadow: 0 0 8px #0008;
 	margin: 12px;
 	padding: 12px;
 	display: grid;
 	grid-template-columns: min-content auto;
-	background-color: #777;
+	background-color: var(--results-entry-bg);
 }
 
 .entry p {
@@ -212,12 +221,12 @@ input[type="submit"] {
 	font-weight:normal;
 	font-size: 16px;
 	text-overflow: ellipsis;
-	color: #777
+	color: var(--results-entry-sub);
 }
 
 .entry h3 a {
 	text-decoration: none;
-	color: #fff;
+	color: var(--results-entry-category);
 	margin-right: 8px;
 }
 
